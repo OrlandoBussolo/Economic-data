@@ -1,2 +1,6 @@
-# DA_TOKEN
-Repository to learn and test integration between github and google colab.
+
+Economic Data Repository Focus:
+
+Extracting data from marketing strokes.
+Transforming it using Python.
+Analyzing it on Power BI.
