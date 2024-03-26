@@ -128,12 +128,12 @@ if __name__ == "__main__":
     cnx = connect_mysql("localhost", "orlando_bussolo", pw_mysql)
     cursor = create_cursor(cnx)
    # creating database
-    create_database(cursor, "db_strokes")
+    create_database(cursor, "db_stocks")
     show_databases(cursor)
 
     # creating table
-    create_table(cursor, "db_strokes", "selic_rate")
-    show_tables(cursor, "db_strokes")
+    create_table(cursor, "db_stocks", "selic_rate")
+    show_tables(cursor, "db_stocks")
 
     # reading and adding data
     selic_data = data_selic_extract()
@@ -142,7 +142,7 @@ if __name__ == "__main__":
    
     correct_data = selic_data_correct(merge_data)
 
-    add_data(cnx, cursor, correct_data, "db_strokes", "selic_rate")
+    add_data(cnx, cursor, correct_data, "db_stocks", "selic_rate")
     cnx.close()
 
 
