@@ -92,14 +92,14 @@ if __name__ == "__main__":
     cursor = create_cursor(cnx)
 
     # creating database
-    create_database(cursor, "db_strokes")
+    create_database(cursor, "db_stocks")
     show_databases(cursor)
 
     # creating table
-    create_table(cursor, "db_strokes", "close_value")
-    show_tables(cursor, "db_strokes")
+    create_table(cursor, "db_stocks", "close_value")
+    show_tables(cursor, "db_stocks")
 
     # reading and adding data
     df = get_historical_price_data(['ITUB3.SA','BBDC4.SA' , 'ROXO34.SA', 'BBAS3.SA', 'SANB11.SA', 'INBR32.SA', 'BPAC11.SA'])
-    add_data(cnx, cursor, df, "db_strokes", "close_value")
+    add_data(cnx, cursor, df, "db_stocks", "close_value")
     cnx.close()
