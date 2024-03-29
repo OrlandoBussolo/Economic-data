@@ -10,7 +10,6 @@ def get_historical_price_data(symbols):
         data = data[['Close']]
         data.columns = [f'{symbol}_Close',]  # Add prefix to columns to differentiate symbols
         data_price = pd.concat([data_price, data], axis=1)  # Concatenate data for each symbol
-    
     return data_price
 
 
