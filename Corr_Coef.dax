@@ -1,0 +1,7 @@
+Corr_Coef = 
+VAR n = DISTINCTCOUNT(kpi_sumarized[Date])
+RETURN
+DIVIDE((n*[Corr_coef_XY]-[Corr_coef_X]*[Corr_coef_Y]),
+        SQRT((n*[Corr_coef_X2]-[Corr_coef_X]^2)*(n*[Corr_coef_Y2]-[Corr_coef_Y]^2)),0)
+
+  
