@@ -33,3 +33,24 @@ VAR Corr_coef_Y2 = SUMX(V_table, [y]*[y])
 RETURN
 DIVIDE((n*[Corr_coef_XY]-[Corr_coef_X]*[Corr_coef_Y]),
     SQRT((n*[Corr_coef_X2]-[Corr_coef_X]^2)*(n*[Corr_coef_Y2]-[Corr_coef_Y]^2)),0)
+
+
+kpi_sumarized = SUMMARIZECOLUMNS(
+    'db_stocks_close_value'[Date],
+    FILTER(
+        'db_stocks_close_value',
+        'db_stocks_close_value'[Date] > DATE(2023,08,07) && 'db_stocks_close_value'[Date] < DATE(2024,03,26)
+    ),
+    "BBAS3", SUM('db_stocks_close_value'[BBAS3_RS]),
+    "BBDC4", SUM('db_stocks_close_value'[BBDC4_RS]),
+    "BPAC11", SUM('db_stocks_close_value'[BPAC11_RS]),
+    "INBR32", SUM('db_stocks_close_value'[INBR32_RS]),
+    "ITUB3", SUM('db_stocks_close_value'[ITUB3_RS]),
+    "ROXO34", SUM('db_stocks_close_value'[ROXO34_RS]),
+    "SANB11", SUM('db_stocks_close_value'[SANB11_RS])
+)
+
+
+Kpi_list = {"BBAS3","BBDC4","BPAC11","INBR32","ITUB3","ROXO34","SANB11"}  
+Kpi_list2 = {"BBAS3","BBDC4","BPAC11","INBR32","ITUB3","ROXO34","SANB11"}  
+
